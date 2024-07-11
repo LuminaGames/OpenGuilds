@@ -1,0 +1,3 @@
+name: OpenGuilds
+version: '${project.version}'
+main: lol.vedant.openguilds.OpenGuilds

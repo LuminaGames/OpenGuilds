@@ -1,0 +1,7 @@
+GENERAL:
+  PREFIX: "&7[&aGuilds]"
+  NO_PERMISSION: "{prefix} &cYou don't have permission to do this."
+  PLAYER_ONLY: "{prefix} &cThis action can only be done by only a player."
+  RELOAD:
+    - "&aReloading plugin files.."
+    - "&eWhile this command exists we still recommend restarting the server.."
