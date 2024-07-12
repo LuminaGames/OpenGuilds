@@ -4,3 +4,12 @@ database:
 
 
 guilds-menu:
+  guild-info-item:
+    slot: 13
+    item:
+      material: BREWING_STAND
+      name: '&e&l{guild}'
+      lore:
+        - '&f{description}'
+        - ''
+        - '&eMembers: &f{members}&7/&e{maxmembers}'

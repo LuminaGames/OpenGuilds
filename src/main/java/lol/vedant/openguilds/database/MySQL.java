@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class MySQL implements Database {
 
     private HikariDataSource dataSource;
-    private OpenGuilds plugin;
+    private final OpenGuilds plugin;
     private final String host;
     private final String database;
     private final String user;

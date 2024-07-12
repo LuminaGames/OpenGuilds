@@ -1,0 +1,19 @@
+bronze-level:
+  name: '&fBronze'
+  required_exp: 500
+
+silver-level:
+  name: '&7Silver'
+  required_exp: 1000
+
+gold-level:
+  name: '&6Gold'
+  required_exp: 1500
+
+diamond-level:
+  name: '&bDiamond'
+  required_exp: 2500
+
+crystal-level:
+  name: '&d&lCrystal'
+  required_exp: 3500

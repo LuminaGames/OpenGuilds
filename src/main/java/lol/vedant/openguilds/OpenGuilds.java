@@ -1,10 +1,12 @@
 package lol.vedant.openguilds;
 
 import fr.mrmicky.fastinv.FastInvManager;
+import lol.vedant.openguilds.commands.GuildCommand;
 import lol.vedant.openguilds.config.ConfigManager;
 import lol.vedant.openguilds.database.Database;
 import lol.vedant.openguilds.database.MySQL;
 import lol.vedant.openguilds.database.SQLite;
+import lol.vedant.openguilds.level.LevelManager;
 import lol.vedant.openguilds.utils.Message;
 import me.despical.commandframework.CommandFramework;
 import org.bukkit.Bukkit;
@@ -15,15 +17,21 @@ public final class OpenGuilds extends JavaPlugin {
 
     private ConfigManager configManager;
     private CommandFramework commandFramework;
+    private LevelManager levelManager;
+
     private Database database;
 
     public static boolean PLACEHOLDER_API = false;
+    private static OpenGuilds instance;
 
     @Override
     public void onEnable() {
+        instance = this;
 
         configManager = new ConfigManager(this);
+        levelManager = new LevelManager(configManager.getLevels().getConfig());
         commandFramework = new CommandFramework(this);
+        commandFramework.registerCommands(new GuildCommand());
 
         if(getConfiguration().getBoolean("database.enabled")) {
             database = new MySQL(this);
@@ -47,5 +55,13 @@ public final class OpenGuilds extends JavaPlugin {
 
     public FileConfiguration getConfiguration() {
         return configManager.getConfig().getConfig();
+    }
+
+    public Database getDb() {
+        return database;
+    }
+
+    public static OpenGuilds getInstance() {
+        return instance;
     }
 }
